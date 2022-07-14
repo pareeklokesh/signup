@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sugnup</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,600&display=swap" rel="stylesheet">
+	<script src="assets/js/jquery.min.js"></script>
+</head>
+<body>
+<div class="w-100 fullpage">
+	<div class="w-100" style="display: flex;flex-wrap: wrap;justify-content: center;">
+	<div class="w-100">
+	<img class="logo" src="assets/img/logo.png">
+</div>
+	<div class="w-3">
+		<div class="w-100">
+			<div class="w-100">
+				<h1 class="signup-title">SIGNUP AND START WINNING</h1>
+			</div>
+			<div class="w-100 p-64">
+			<div class="w-100 otp-send">
+				<label for="mob_number">Mobile Number</label>
+				<div class="w-100">
+					<span class="code">+91</span>
+					<input type="Number" name="number" id="mob_number" maxlength="10" onkeypress="return NumberOnly(event)" />
+					<button class="sendotp" id="otp_get" disabled="disabled">Send OTP</button>
+				</div>
+			</div>
+			<div class="w-100 otp-show otp-send">
+				<label for="otp">OTP</label>
+				<div class="w-100">
+					<input type="Number" name="number" id="otp" maxlength="" onkeypress="return NumberOnly(event)" style="width: 132px;padding: 5px;" />
+				</div>
+			</div>
+			<div class="w-100 accept-check">
+				<input type="checkbox" id="accept" name="">
+				<label for="accept">I accept to the <a href="#">terms and conditions</a> and Privacy Policy and confirm that I am legally of age and fully competent. </label>
+			</div>
+			<div class="w-100">
+				<button id="submit_otp" class="playwin" disabled="disabled">Play & win</button>
+			</div>
+		</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+
+
+<script>
+	$('#mob_number').on('keyup',function(){
+       
+        if($(this).val().length == 10){
+          $('#otp_get').removeAttr('disabled','disabled');
+        }else{
+          $('#otp_get').attr('disabled','disabled');
+        }
+
+      });
+	$("#otp_get").click(function(){
+		$(".otp-show").show();
+		$("#submit_otp").removeAttr('disabled','disabled');
+	});
+</script>
+
+</body>
+</html>
